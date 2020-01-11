@@ -15,7 +15,12 @@ $ sudo systemctl enable docker
 ```
 
 ## 3. Download code of fmpay
-Download the code of fmpay with the following command:git clone https://github.com/realFMPAY/fmpay.git
+Download the code of fmpay with the following command:
+
+```bash
+git clone https://github.com/realFMPAY/fmpay.git
+```
+
 ## 4. Build the image
 Cd into directory 'fmpay' and type in the following command so that you can
 build your own docker image of fmpay:
