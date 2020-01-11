@@ -6,16 +6,23 @@ docker ID, in a similar process as that of most ID registrations.
 Download ‘git’ with the following command:
 sudo apt install git
 Download and activate ‘docker’ with the following command:
-sudo apt update
-sudo apt install docker.io
-sudo systemctl start docker
-sudo systemctl enable docker
+
+'''bash
+$ sudo apt update
+$ sudo apt install docker.io
+$ sudo systemctl start docker
+$ sudo systemctl enable docker
+'''
+
 ## 3. Download code of fmpay
 Download the code of fmpay with the following command:git clone https://github.com/realFMPAY/fmpay.git
 ## 4. Build the image
 Cd into directory 'fmpay' and type in the following command so that you can
 build your own docker image of fmpay:
-build-docker-image/build.sh
+
+'''bash
+$ build-docker-image/build.sh
+'''
 
 At some point during the running of the command, your will be asked to tell
 the process some information on the image about to be built:
@@ -34,24 +41,43 @@ same repo, just name it as you wish.
 ## 5. Run the image
 Type in the following command so that you can see the information on the
 docker image you have just built:
-docker images
+
+'''bash
+$ docker images
+'''
+
 Type in the following command to run the image:
-docker run –name mycontainer fmpay/fmpay:beta
+
+'''bash
+$ docker run –name mycontainer fmpay/fmpay:beta
+'''
+
 ### Run TPS tester
 Type in the following command to run the TPS tester
-    1. docker exec -it mycontainer /bin/bash
-    2. ./demo/tester.sh
+
+'''bash
+    $ docker exec -it mycontainer /bin/bash
+    $ ./demo/tester.sh
+'''
 Note that <your docker ID>, <repo name> and <image name> are ones that
 you have specified in step 4. 
 
 ## 6. Push the image
 Type in the following command so that you can push the image to your
 docker ID on hub.docker.com:
-docker push <your docker ID>/<repo name>:<image name>
+
+'''bash
+$ docker push <your docker ID>/<repo name>:<image name>
+'''
+
 Note that the 3 parameters are the same as those in step 5.
 
 ## 7. Pull the image
 Type in the following command so that you can pull down the image you
 have just pushed to dockerhub in step 6 to your local machine.
-docker pull <your docker ID>/<repo name>:<image name>
+
+'''bash
+$ docker pull <your docker ID>/<repo name>:<image name>
+'''
+
 If you want to run it, just do it the same way as specified in step 5.
